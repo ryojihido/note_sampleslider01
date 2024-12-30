@@ -11,32 +11,49 @@
   <meta property="og:image" content="https://ryojihido.github.io/note_sampleslider01/before.png">
   <meta property="og:url" content="https://ryojihido.github.io/note_sampleslider01/">
   <meta property="og:type" content="website">
+
+  <!-- Juxtapose.js CSS -->
+  <link rel="stylesheet" href="https://cdn.knightlab.com/libs/juxtapose/latest/css/juxtapose.css">
+
+  <!-- Custom CSS -->
+  <style>
+    /* 画像のサイズを666x701に固定 */
+    #comparison-container {
+      width: 666px;
+      height: 701px;
+      margin: 0 auto; /* ページ中央に配置（オプション） */
+    }
+    #comparison-container img {
+      width: 666px;
+      height: 701px;
+      object-fit: cover; /* 画像を均等に埋める */
+    }
+  </style>
 </head>
-
 <body>
-    <!-- Juxtapose.js Container -->
-    <div id="comparison-container">
-        <div class="juxtapose">
-            <img src="before.png" alt="Before">
-            <img src="after.png" alt="After">
-        </div>
+  <!-- Juxtapose.js Container -->
+  <div id="comparison-container">
+    <div class="juxtapose">
+      <img src="before.png" alt="Before">
+      <img src="after.png" alt="After">
     </div>
+  </div>
 
-    <!-- Juxtapose.js JavaScript -->
-    <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            new juxtapose.JXSlider('#comparison-container', [
-                {
-                    src: 'before.png',
-                    label: 'Before'
-                },
-                {
-                    src: 'after.png',
-                    label: 'After'
-                }
-            ]);
-        });
-    </script>
+  <!-- Juxtapose.js JavaScript -->
+  <script src="https://cdn.knightlab.com/libs/juxtapose/latest/js/juxtapose.min.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      new juxtapose.JXSlider('#comparison-container', [
+        {
+          src: 'before.png',
+          label: 'Before'
+        },
+        {
+          src: 'after.png',
+          label: 'After'
+        }
+      ]);
+    });
+  </script>
 </body>
 </html>
